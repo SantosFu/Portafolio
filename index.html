@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.carousel-images img');
+            const nextButton = document.getElementById('next');
+            const prevButton = document.getElementById('prev');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.style.transform = `translateX(${-100 * index}%)`;
+                });
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            showImage(currentIndex);
+        });
+    </script>
+</head>
+<body>
+
+
+    <header class="header" id="header">
+        <img src="wasa.png" alt="Logo" class="logo" onclick="window.scrollTo(0, 0);">
+        <p>Santos Mira</p>
+    </header>
+
+
+    <script>
+        //script  para ocultar el header cuando se desplaza
+        let prevScrollpos = window.pageYOffset;  
+
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;  
+            const header = document.getElementById("header");  
+
+            
+            if (prevScrollpos > currentScrollPos) {
+                header.style.top = "0";  
+            } else {
+                header.style.top = "-90px"; 
+            }
+
+            prevScrollpos = currentScrollPos;  
+        }
+    </script>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Sobre mí</h2>
+                <p>
+                    ¡Hola! Soy un desarrollador apasionado por la tecnología, el diseño y la creación de soluciones creativas que impactan positivamente.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="santos.jpg" alt="Foto de muestra">
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <br>
+        <div class="projects-container">
+            <div class="project">
+                <img src="proyecto1.png" alt="Proyecto 1">
+                <h3>KINE-TEC</h3>
+                <p>Descripción breve del proyecto 1.</p>
+            </div>
+            <div class="project">
+                <img src="proyecto2.jpg" alt="Proyecto 2">
+                <h3>PASO SEGURO</h3>
+                <p>Descripción breve del proyecto 2.</p>
+            </div>
+            <div class="project">
+                <img src="proyecto3.jpg" alt="Proyecto 3">
+                <h3>SIDE-TEC</h3>
+                <p>Descripción breve del proyecto 3.</p>
+            </div>
+        </div>
+    </section>
+
+ 
+
+
+
+
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-title">
+                <h2>FOTOS</h2>
+            </div>
+            <div class="carousel">
+                <button id="prev">&#8249;</button>
+                <div class="carousel-images">
+                    <img src="image1.jpg" alt="Imagen 1">
+                    <img src="image2.jpg" alt="Imagen 2">
+                    <img src="image3.jpg" alt="Imagen 3">
+                </div>
+                <button id="next">&#8250;</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <div class="elementos">
+        <div class="imagenes">
+            <img src="ar1.jpg" alt="Imagen 1">
+            <img src="ar2.jpg" alt="Imagen 2">
+        </div>
+        <div class="datos">
+            <h2>"¿por que yo?"</h2>
+            <ul>
+                <li>Opción 1: Descripción breve</li>
+                <li>Opción 2: Información útil</li>
+                <li>Opción 3: Beneficios clave</li>
+                <li>Opción 4: Características principales</li>
+                <li>Opción 5: Más detalles</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <br>
+
+    <section id="final-image">
+        <div class="final-image-container">
+            <div class="final-image-text">
+                <h2>Título Final</h2>
+                <p>Este es el texto descriptivo que acompaña a la imagen final. Representa algo importante o relevante del portafolio.</p>
+            </div>
+            <div class="final-image">
+                <img src="final.jpg" alt="Imagen final">
+            </div>
+        </div>
+    </section>
+    <br>
+   
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+        <i class="fas fa-copyright"></i>
+        <span>© 2025 Derechos reservados - Santos Mira</span>
+    </div>
+
+    <div class="footer-right">
+        <a href="https://www.linkedin.com/in/santos-mira02320/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            <img src="in.png" alt="linkedin">
+        </a>
+        <a href="tel:+541161540776" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <img src="wasa.png" alt="whatsapp">
+        </a>
+        <a href="hit.png" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+            <img src="hit.png" alt="GitHub">
+        </a>
+        <a href="mailto:santos18mira@gmail.com" target="_blank" title="Gmail mailto">
+            <i class="fab fa-gmail"></i>
+            <img src="gmai.png" alt="Gmail">
+        </a>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
